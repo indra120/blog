@@ -1,0 +1,40 @@
+.app-bar {
+  background: linear-gradient(to right, #f42f4a, #f57342, #f5b139);
+  animation: appBarBackground 9s ease infinite;
+  background-size: 200% 200%;
+  padding: 0.25rem 0;
+
+  .logo {
+    font-size: 2.5rem;
+    font-weight: 600;
+
+    a {
+      -webkit-text-stroke: white 2.5px;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .nav-menu {
+    margin-left: auto;
+    gap: 1rem;
+
+    a {
+      font-size: 1.125rem;
+      &:hover {
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+@keyframes appBarBackground {
+  0% {
+    background-position: 10% 0%;
+  }
+  50% {
+    background-position: 91% 100%;
+  }
+  100% {
+    background-position: 10% 0%;
+  }
+}
