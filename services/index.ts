@@ -7,3 +7,4 @@ export {
 }
 
 export { default as getCategories } from './getCategories'
+export { default as getPosts } from './getPosts'

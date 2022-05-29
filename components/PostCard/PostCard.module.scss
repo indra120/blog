@@ -1,0 +1,37 @@
+.card {
+  text-align: center;
+  border-radius: 1rem;
+
+  .featured-image {
+    margin-bottom: 1rem;
+
+    img {
+      border-radius: 1rem;
+      width: 100%;
+      height: 20rem;
+      object-fit: cover;
+
+      @media (max-width:600px){
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+
+  .post-info {
+    gap: 1rem;
+    padding: 1rem;
+    .post-title {
+      font-size: 2.25rem;
+      font-weight: 600;
+    }
+
+    .date-icon {
+      fill: #f57342;
+    }
+
+    .caption {
+      font-size: 1rem;
+    }
+  }
+}
