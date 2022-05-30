@@ -12,13 +12,15 @@ const PostCard: React.FC<{ post: posts[0]['node'] }> = ({ post }) => {
   return (
     <Card sx={{ p: { sm: '2rem' } }} className={style['card']}>
       <Box className={style['featured-image']}>
-        <img src={post.featuredImage.url} alt={post.title} />
+        <Link href={`/post/${post.slug}`}>
+          <img src={post.featuredImage.url} alt={post.title} />
+        </Link>
       </Box>
 
       <Grid container direction="column" className={style['post-info']}>
         <Grid item>
           <Typography variant="h2" className={style['post-title']}>
-            {post.title}
+            <Link href={`/post/${post.slug}`}>{post.title}</Link>
           </Typography>
         </Grid>
 
@@ -66,9 +68,9 @@ const PostCard: React.FC<{ post: posts[0]['node'] }> = ({ post }) => {
         </Grid>
 
         <Grid item>
-          <ActionButton Icon={ArrowForwardRounded}>
-            <Link href={`/post/${post.slug}`}>Read More</Link>
-          </ActionButton>
+          <Link href={`/post/${post.slug}`}>
+            <ActionButton Icon={ArrowForwardRounded}>Read More</ActionButton>
+          </Link>
         </Grid>
       </Grid>
     </Card>

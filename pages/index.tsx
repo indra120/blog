@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Container, Grid } from '@mui/material'
+import { Box, Container, Grid } from '@mui/material'
 import { getPosts } from '../services'
 import { posts } from '../interfaces'
-import { PostCard } from '../components'
+import { PostCard, RecommendationWidget } from '../components'
 
 const Home: NextPage<{ posts: posts }> = ({ posts }) => {
   return (
@@ -15,13 +15,17 @@ const Home: NextPage<{ posts: posts }> = ({ posts }) => {
       </Head>
 
       <main>
-        <Grid container sx={{ mt: '3rem' }}>
+        <Grid container sx={{ mt: '2.5rem' }} spacing={4}>
           <Grid item md={8}>
             {posts.map((post) => (
               <PostCard key={post.node.title} post={post.node} />
             ))}
           </Grid>
-          <Grid item md={4}></Grid>
+          <Grid item md={4}>
+            <Box>
+              <RecommendationWidget />
+            </Box>
+          </Grid>
         </Grid>
       </main>
     </Container>

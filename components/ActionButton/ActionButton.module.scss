@@ -13,9 +13,13 @@
   padding-left: 15px;
   padding-right: 7.5px;
   transition: all 500ms;
+  box-shadow: 0px 3px 1px -2px rgba(245, 115, 66, 0.2),
+    0px 2px 2px 0px rgba(245, 115, 66, 0.14),
+    0px 1px 5px 0px rgba(245, 115, 66, 0.12);
 
   &:hover {
     background: linear-gradient(to right, #f42f4a, #f57342, #f5b139);
+    box-shadow: rgba(245, 115, 66, 0.2) 0px 8px 24px;
     border: 1px solid #fff;
     color: #fff;
 

@@ -20,11 +20,20 @@ export type posts = {
     featuredImage: {
       url: string
     }
-    categories: [
-      {
-        name: string
-        slug: string
-      }
-    ]
+    categories: categories
   }
+}[]
+
+export type recommendationWidget = {
+  categories: string[]
+  slug: string
+}
+
+export type relatedPosts = {
+  title: string
+  featuredImage: {
+    url: string
+  }
+  createdAt: string
+  slug: string
 }[]
