@@ -1,9 +1,10 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Box, Container, Grid } from '@mui/material'
+import StickyBox from 'react-sticky-box'
+import { Container, Grid } from '@mui/material'
 import { getPosts } from '../services'
 import { posts } from '../interfaces'
-import { PostCard, RecommendationWidget } from '../components'
+import { CategoriesWidget, PostCard, RecommendationWidget } from '../components'
 
 const Home: NextPage<{ posts: posts }> = ({ posts }) => {
   return (
@@ -22,9 +23,16 @@ const Home: NextPage<{ posts: posts }> = ({ posts }) => {
             ))}
           </Grid>
           <Grid item md={4}>
-            <Box>
-              <RecommendationWidget />
-            </Box>
+            <StickyBox offsetTop={96}>
+              <Grid container direction="column" spacing={4}>
+                <Grid item>
+                  <RecommendationWidget />
+                </Grid>
+                <Grid item>
+                  <CategoriesWidget />
+                </Grid>
+              </Grid>
+            </StickyBox>
           </Grid>
         </Grid>
       </main>

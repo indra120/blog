@@ -1,16 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import Link from 'next/link'
 import { AppBar, Box, Container, Toolbar, Typography } from '@mui/material'
-import { getCategories } from '../../services'
-import { categories } from '../../interfaces'
+import { Categories } from '../Layout'
 import style from './Header.module.scss'
 
 const Header: React.FC = () => {
-  const [categories, setCategories] = useState<categories>([])
-
-  useEffect(() => {
-    getCategories().then((category) => setCategories(category))
-  }, [])
+  const categories = useContext(Categories)
 
   return (
     <>
