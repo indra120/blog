@@ -5,6 +5,7 @@ import { Container, Grid } from '@mui/material'
 import { getPosts } from '../services'
 import { posts } from '../interfaces'
 import { CategoriesWidget, PostCard, RecommendationWidget } from '../components'
+import { Sidebar } from '../sections'
 
 const Home: NextPage<{ posts: posts }> = ({ posts }) => {
   return (
@@ -23,16 +24,7 @@ const Home: NextPage<{ posts: posts }> = ({ posts }) => {
             ))}
           </Grid>
           <Grid item md={4}>
-            <StickyBox offsetTop={96}>
-              <Grid container direction="column" spacing={4}>
-                <Grid item>
-                  <RecommendationWidget />
-                </Grid>
-                <Grid item>
-                  <CategoriesWidget />
-                </Grid>
-              </Grid>
-            </StickyBox>
+            <Sidebar />
           </Grid>
         </Grid>
       </main>

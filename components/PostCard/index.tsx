@@ -1,11 +1,10 @@
-import { ArrowForwardRounded, DateRange } from '@mui/icons-material'
+import { ArrowForwardRounded } from '@mui/icons-material'
 import { Box, Card, Grid, Typography } from '@mui/material'
-import moment from 'moment'
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { posts } from '../../interfaces'
 import ActionButton from '../ActionButton'
+import {PostInfo} from '..'
 import style from './PostCard.module.scss'
 
 const PostCard: React.FC<{ post: posts[0]['node'] }> = ({ post }) => {
@@ -25,40 +24,7 @@ const PostCard: React.FC<{ post: posts[0]['node'] }> = ({ post }) => {
         </Grid>
 
         <Grid item>
-          <Grid container justifyContent="center" sx={{ gap: '1rem' }}>
-            <Grid item>
-              <Grid container sx={{ gap: '0.5rem' }}>
-                <Grid item>
-                  <Image
-                    src={post.author.photo.url}
-                    alt={post.author.name}
-                    width={32}
-                    height={32}
-                  />
-                </Grid>
-
-                <Grid item>
-                  <Typography variant="subtitle1">
-                    {post.author.name}
-                  </Typography>
-                </Grid>
-              </Grid>
-            </Grid>
-
-            <Grid item>
-              <Grid container sx={{ gap: '0.5rem' }}>
-                <Grid item>
-                  <DateRange className={style['date-icon']} />
-                </Grid>
-
-                <Grid item>
-                  <Typography variant="subtitle1">
-                    {moment(post.createdAt).format('MMM DD,YYYY')}
-                  </Typography>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
+          <PostInfo authorImg={post.author.photo.url} authorName={post.author.name} createdAt={post.createdAt} />
         </Grid>
 
         <Grid item>
