@@ -1,4 +1,5 @@
 export { default as ActionButton } from './ActionButton'
+export { default as Author } from './Author'
 export { default as CategoriesWidget } from './CategoriesWidget'
 export { default as Header } from './Header'
 export { default as Layout } from './Layout'

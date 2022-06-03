@@ -15,7 +15,7 @@ const PostContent: React.FC = () => {
         <img src={post.featuredImage.url} alt={post.title} />
       </Box>
 
-      <Box sx={{ px: { xs: '1.25rem', sm: 0 } }}>
+      <Box sx={{ px: { xs: '2rem', sm: 0 } }}>
         <PostInfo
           authorImg={post.author.photo.url}
           authorName={post.author.name}

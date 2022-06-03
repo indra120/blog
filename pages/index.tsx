@@ -18,12 +18,12 @@ const Home: NextPage<{ posts: posts }> = ({ posts }) => {
 
       <main>
         <Grid container sx={{ mt: '2.5rem' }} spacing={4}>
-          <Grid item md={8}>
+          <Grid item xs={12} md={8}>
             {posts.map((post) => (
               <PostCard key={post.node.title} post={post.node} />
             ))}
           </Grid>
-          <Grid item md={4}>
+          <Grid item xs={12} md={4}>
             <Sidebar />
           </Grid>
         </Grid>

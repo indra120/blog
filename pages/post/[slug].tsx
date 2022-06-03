@@ -1,6 +1,6 @@
 import { Container, Grid } from '@mui/material'
 import React, { createContext } from 'react'
-import { PostContent } from '../../components'
+import { Author, PostContent } from '../../components'
 import { postDetails } from '../../interfaces'
 import { Sidebar } from '../../sections'
 import { getPostDetails, getPosts } from '../../services'
@@ -11,12 +11,13 @@ const PostDetailsPage: React.FC<postDetails> = ({ post }) => {
   return (
     <Container>
       <Grid container sx={{ mt: '2.5rem' }} spacing={4}>
-        <Grid item md={8}>
+        <Grid item xs={12} md={8}>
           <Post.Provider value={post}>
             <PostContent />
+            <Author />
           </Post.Provider>
         </Grid>
-        <Grid item md={4}>
+        <Grid item xs={12} md={4}>
           <Sidebar
             slug={post.slug}
             categories={post.categories.map((category) => category.slug)}
