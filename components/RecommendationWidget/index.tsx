@@ -3,7 +3,7 @@ import moment from 'moment'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
-import { recommendationWidget, relatedPosts } from '../../interfaces'
+import type { recommendationWidget, relatedPosts } from '../../interfaces'
 import { getRecentPosts, getSimilarPosts } from '../../services'
 import style from './RecommendationWidget.module.scss'
 

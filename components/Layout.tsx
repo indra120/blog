@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react'
-import { categories } from '../interfaces'
+import type { categories } from '../interfaces'
 import { getCategories } from '../services'
 import { Header } from '.'
 

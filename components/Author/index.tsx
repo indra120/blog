@@ -1,7 +1,7 @@
 import { Card, Grid, Typography } from '@mui/material'
 import Image from 'next/image'
 import React, { useContext } from 'react'
-import { postDetails } from '../../interfaces'
+import type { postDetails } from '../../interfaces'
 import { Post } from '../../pages/post/[slug]'
 import style from './Author.module.scss'
 

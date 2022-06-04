@@ -1,6 +1,6 @@
 import { Box, Card, Typography } from '@mui/material'
 import React, { useContext } from 'react'
-import { postDetails } from '../../interfaces'
+import type { postDetails } from '../../interfaces'
 import { Post } from '../../pages/post/[slug]'
 import { PostInfo } from '..'
 import style from './PostContent.module.scss'
