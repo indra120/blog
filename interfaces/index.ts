@@ -82,3 +82,9 @@ export interface postDetails {
     }
   }
 }
+
+export type comments = {
+  name: string
+  createdAt: string
+  comment: string
+}[]

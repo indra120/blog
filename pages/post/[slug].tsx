@@ -1,6 +1,6 @@
 import { Container, Grid } from '@mui/material'
 import React, { createContext } from 'react'
-import { AddComments, Author, PostContent } from '../../components'
+import { AddComments, Author, Comments, PostContent } from '../../components'
 import { postDetails } from '../../interfaces'
 import { Sidebar } from '../../sections'
 import { getPostDetails, getPosts } from '../../services'
@@ -16,6 +16,7 @@ const PostDetailsPage: React.FC<postDetails> = ({ post }) => {
             <PostContent />
             <Author />
             <AddComments />
+            <Comments />
           </Post.Provider>
         </Grid>
         <Grid item xs={12} md={4}>
