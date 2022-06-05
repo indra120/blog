@@ -1,4 +1,6 @@
 import { Container, Grid } from '@mui/material'
+import { NextPage } from 'next'
+import Head from 'next/head'
 import React, { createContext } from 'react'
 import { AddComments, Author, Comments, PostContent } from '../../components'
 import { postDetails } from '../../interfaces'
@@ -7,26 +9,34 @@ import { getPostDetails, getPosts } from '../../services'
 
 export const Post = createContext<any>({})
 
-const PostDetailsPage: React.FC<postDetails> = ({ post }) => {
+const PostDetailsPage: NextPage<postDetails> = ({ post }) => {
   return (
-    <Container>
-      <Grid container sx={{ mt: '2.5rem' }} spacing={4}>
-        <Grid item xs={12} md={8}>
-          <Post.Provider value={post}>
-            <PostContent />
-            <Author />
-            <AddComments />
-            <Comments />
-          </Post.Provider>
+    <>
+      <Head>
+        <title>{post.title && `${post.title} | Ryzenix Blog`}</title>
+        <meta name="description" content={post.exerpt} />
+      </Head>
+
+      <Container>
+        <Grid container sx={{ mt: '2.5rem' }} spacing={4}>
+          <Grid item xs={12} md={8}>
+            <Post.Provider value={post}>
+              <PostContent />
+              <Author />
+              <AddComments />
+              <Comments />
+            </Post.Provider>
+          </Grid>
+          
+          <Grid item xs={12} md={4}>
+            <Sidebar
+              slug={post.slug}
+              categories={post.categories.map((category) => category.slug)}
+            />
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={4}>
-          <Sidebar
-            slug={post.slug}
-            categories={post.categories.map((category) => category.slug)}
-          />
-        </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </>
   )
 }
 

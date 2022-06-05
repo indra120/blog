@@ -20,7 +20,6 @@ export type posts = {
     featuredImage: {
       url: string
     }
-    categories: categories
   }
 }[]
 
@@ -88,3 +87,30 @@ export type comments = {
   createdAt: string
   comment: string
 }[]
+
+export interface category {
+  posts: {
+    node: {
+      author: {
+        bio: string
+        name: string
+        id: string
+        photo: {
+          url: string
+        }
+      }
+      createdAt: string
+      slug: string
+      title: string
+      exerpt: string
+      featuredImage: {
+        url: string
+      }
+      categories: {
+        name: string
+        slug: string
+      }
+    }
+  }[]
+  title: string
+}

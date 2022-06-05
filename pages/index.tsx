@@ -9,26 +9,27 @@ import { Sidebar } from '../sections'
 
 const Home: NextPage<{ posts: posts }> = ({ posts }) => {
   return (
-    <Container>
+    <>
       <Head>
         <title>Ryzenix Blog</title>
         <meta name="description" content="A blog page of Ryzenix" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <Container>
         <Grid container sx={{ mt: '2.5rem' }} spacing={4}>
           <Grid item xs={12} md={8}>
             {posts.map((post) => (
               <PostCard key={post.node.title} post={post.node} />
             ))}
           </Grid>
+          
           <Grid item xs={12} md={4}>
             <Sidebar />
           </Grid>
         </Grid>
-      </main>
-    </Container>
+      </Container>
+    </>
   )
 }
 
