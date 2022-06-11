@@ -4,7 +4,7 @@ import style from './ActionButton.module.scss'
 
 const ActionButton: React.FC<{
   children: React.ReactNode
-  className: string
+  className?: string
   Icon: any
   onClick: React.MouseEventHandler<HTMLButtonElement>
 }> = ({ children, className, Icon, onClick }) => (
