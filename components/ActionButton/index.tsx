@@ -6,7 +6,7 @@ const ActionButton: React.FC<{
   children: React.ReactNode
   className?: string
   Icon: any
-  onClick: React.MouseEventHandler<HTMLButtonElement>
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
 }> = ({ children, className, Icon, onClick }) => (
   <Button
     variant="contained"
