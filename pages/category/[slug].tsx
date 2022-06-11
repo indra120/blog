@@ -17,7 +17,7 @@ const CategoryPage: NextPage<category> = ({ posts, title }) => {
       <Container>
         <Grid container sx={{ mt: '2.5rem' }} spacing={4}>
           <Grid item xs={12} md={8}>
-            {posts.map((post, i) => (
+            {posts?.map((post, i) => (
               <PostCard key={i} post={post.node} />
             ))}
           </Grid>
