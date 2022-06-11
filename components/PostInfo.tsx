@@ -8,7 +8,7 @@ const PostInfo: React.FC<{
   authorImg: string
   authorName: string
   createdAt: string
-  sx: object
+  sx?: object
 }> = ({ authorImg, authorName, createdAt, sx }) => {
   return (
     <Grid container justifyContent="center" sx={{ gap: '1rem', ...sx }}>

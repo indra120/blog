@@ -11,7 +11,7 @@ import {
   TextField,
   Typography,
 } from '@mui/material'
-import { FC, useContext, useEffect, useRef, useState } from 'react'
+import { FC, useContext, useEffect, useState } from 'react'
 import { submitComment } from '../../services'
 import { ActionButton } from '..'
 import style from './AddComments.module.scss'
