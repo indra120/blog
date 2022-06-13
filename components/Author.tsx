@@ -1,16 +1,15 @@
 import { Card, Grid, Typography } from '@mui/material'
 import Image from 'next/image'
-import React, { useContext } from 'react'
-import type { postDetails } from '../../interfaces'
-import { Post } from '../../pages/post/[slug]'
-import style from './Author.module.scss'
+import { FC, useContext } from 'react'
+import type { postDetails } from '../interfaces'
+import { Post } from '../pages/post/[slug]'
 
-const Author: React.FC = () => {
+const Author: FC = () => {
   const { author } = useContext<postDetails['post']>(Post)
 
   return (
-    <Card className={style['card']}>
-      <Grid container className={style['grid']}>
+    <Card className="author">
+      <Grid container className="grid">
         <Grid item>
           <Image
             src={author.photo.url}
@@ -20,7 +19,7 @@ const Author: React.FC = () => {
             objectFit="cover"
           />
         </Grid>
-        <Grid item className={style['author']}>
+        <Grid item className="info">
           <Typography variant="h4" fontSize="1.5rem" fontWeight={600}>
             {author.name}
           </Typography>

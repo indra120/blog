@@ -1,13 +1,11 @@
 import { Card, Box, Grid, Typography } from '@mui/material'
 import moment from 'moment'
-import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState, useEffect } from 'react'
-import type { recommendationWidget, relatedPosts } from '../../interfaces'
-import { getRecentPosts, getSimilarPosts } from '../../services'
-import style from './RecommendationWidget.module.scss'
+import { FC, useState, useEffect } from 'react'
+import type { recommendationWidget, relatedPosts } from '../interfaces'
+import { getRecentPosts, getSimilarPosts } from '../services'
 
-const RecommendationWidget: React.FC<recommendationWidget> = ({
+const RecommendationWidget: FC<recommendationWidget> = ({
   categories,
   slug,
 }) => {
@@ -23,26 +21,26 @@ const RecommendationWidget: React.FC<recommendationWidget> = ({
   }, [slug])
 
   return (
-    <Card className={style['card']}>
-      <Typography variant="h3" className={style['widget-title']}>
+    <Card className="recommendation-widget">
+      <Typography variant="h3" className="widget-title">
         {slug ? 'Related Posts' : 'Recently Added'}
       </Typography>
 
-      <Box className={style['posts']}>
+      <Box className="posts">
         {relatedPosts.map((post) => (
           <Link key={post.title} href={`/post/${post.slug}`}>
-            <Card className={style['card-item']}>
+            <Card className="recommendation">
               <img
                 src={post.featuredImage.url}
                 alt={post.title}
-                className={style['image']}
+                className="image"
               />
 
-              <Box className={style['info']}>
-                <Typography className={style['date']}>
+              <Box className="info">
+                <Typography className="date">
                   {moment(post.createdAt).format('MMM DD, YYYY')}
                 </Typography>
-                <Typography className={style['title']}>
+                <Typography className="title">
                   <Link href={`/post/${post.slug}`}>{post.title}</Link>
                 </Typography>
               </Box>

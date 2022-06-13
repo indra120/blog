@@ -1,9 +1,9 @@
 import { Box, Drawer, List, ListItem, ListItemButton } from '@mui/material'
 import Link from 'next/link'
-import React, { useContext } from 'react'
+import { FC, useContext } from 'react'
 import { Categories } from './Layout'
 
-const MobileNavMenu: React.FC<{ onClose: () => void; open: boolean }> = ({
+const MobileNavMenu: FC<{ onClose: () => void; open: boolean }> = ({
   onClose,
   open,
 }) => {

@@ -2,9 +2,9 @@ import { DateRange } from '@mui/icons-material'
 import { Grid, Typography } from '@mui/material'
 import moment from 'moment'
 import Image from 'next/image'
-import React from 'react'
+import { FC } from 'react'
 
-const PostInfo: React.FC<{
+const PostInfo: FC<{
   authorImg: string
   authorName: string
   createdAt: string

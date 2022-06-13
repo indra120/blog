@@ -1,17 +1,16 @@
 import { Box, Card, Typography } from '@mui/material'
-import React, { useContext } from 'react'
-import type { postDetails } from '../../interfaces'
-import { Post } from '../../pages/post/[slug]'
-import { PostInfo } from '..'
-import style from './PostContent.module.scss'
-import getContentFragment from '../../helpers/getContentFragment'
+import { FC, useContext } from 'react'
+import type { postDetails } from '../interfaces'
+import { Post } from '../pages/post/[slug]'
+import { PostInfo } from '.'
+import getContentFragment from '../helpers/getContentFragment'
 
-const PostContent: React.FC = () => {
+const PostContent: FC = () => {
   const post = useContext<postDetails['post']>(Post)
 
   return (
-    <Card sx={{ p: { sm: '2rem' } }} className={style['card']}>
-      <Box className={style['featured-image']}>
+    <Card sx={{ p: { sm: '2rem' } }} className="post-content">
+      <Box className="featured-image">
         <img src={post.featuredImage.url} alt={post.title} />
       </Box>
 
@@ -23,10 +22,7 @@ const PostContent: React.FC = () => {
           sx={{ mb: '1.5rem', justifyContent: 'flex-start' }}
         />
 
-        <Typography
-          variant="h2"
-          className={style['post-title']}
-        >
+        <Typography variant="h2" className="title">
           {post.title}
         </Typography>
 

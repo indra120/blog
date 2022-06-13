@@ -1,4 +1,4 @@
-.card {
+.author {
   border-radius: 1rem;
   padding: 2rem;
   margin-bottom: 2rem;
@@ -12,7 +12,7 @@
       gap: 1.5rem;
     }
 
-    .author {
+    .info {
       @media (max-width: 600px) {
         text-align: center;
       }

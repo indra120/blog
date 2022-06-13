@@ -12,19 +12,17 @@ import {
   Typography,
 } from '@mui/material'
 import { FC, useContext, useEffect, useState } from 'react'
-import { submitComment } from '../../services'
-import { ActionButton } from '..'
-import style from './AddComments.module.scss'
+import { submitComment } from '../services'
+import { ActionButton } from '.'
 import { CheckCircleRounded, CloseRounded, Telegram } from '@mui/icons-material'
-import { Post } from '../../pages/post/[slug]'
-import { postDetails } from '../../interfaces'
+import { Post } from '../pages/post/[slug]'
+import { postDetails } from '../interfaces'
 
 const AddComments: FC = () => {
   const { slug } = useContext<postDetails['post']>(Post)
 
   const [error, setError] = useState<boolean>(false)
   const [showResponseMessage, setShowResponseMessage] = useState<boolean>(false)
-  const [dialog, setDialog] = useState<boolean>(false)
 
   const [comment, setComment] = useState<string>('')
   const [email, setEmail] = useState<string | null>('')
@@ -59,19 +57,14 @@ const AddComments: FC = () => {
       slug,
     }).then((res) => {
       setShowResponseMessage(true)
-      setTimeout(() => {
-        setShowResponseMessage(false)
-      }, 3000)
     })
-
-    setDialog(true)
   }
 
-  const closeDialog = () => setDialog(false)
+  const closeDialog = () => setShowResponseMessage(false)
 
   return (
-    <Card className={style['card']}>
-      <Typography variant="h3" className={style['widget-title']}>
+    <Card className="add-comments">
+      <Typography variant="h3" className="widget-title">
         Leave a Reply
       </Typography>
 
@@ -80,7 +73,7 @@ const AddComments: FC = () => {
         onChange={(e) => setComment(e.currentTarget.value)}
         minRows={8}
         placeholder="Comment"
-        className={style['text-area']}
+        className="text-area"
       />
 
       <Grid container spacing={4}>
@@ -90,7 +83,7 @@ const AddComments: FC = () => {
             onChange={(e) => setName(e.currentTarget.value)}
             type="text"
             label="Name"
-            className={style['text-field']}
+            className="text-field"
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -99,13 +92,13 @@ const AddComments: FC = () => {
             onChange={(e) => setEmail(e.currentTarget.value)}
             type="email"
             label="Email"
-            className={style['text-field']}
+            className="text-field"
           />
         </Grid>
       </Grid>
 
       <FormControlLabel
-        className={style['checkbox']}
+        className="checkbox"
         control={
           <Checkbox
             checked={storeData}
@@ -118,13 +111,13 @@ const AddComments: FC = () => {
       <ActionButton
         Icon={Telegram}
         onClick={handleCommentSubmission}
-        className={style['submit-button']}
+        className="submit-button"
       >
         Submit your comment
       </ActionButton>
 
       <Dialog
-        open={dialog}
+        open={showResponseMessage}
         onClose={closeDialog}
         sx={{
           '.MuiPaper-root': {
@@ -133,7 +126,6 @@ const AddComments: FC = () => {
             borderRadius: '2rem',
           },
         }}
-        className={style['submit-alert']}
       >
         <DialogContent sx={{ p: '0px' }}>
           <CheckCircleRounded

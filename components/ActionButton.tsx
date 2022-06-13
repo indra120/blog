@@ -1,8 +1,7 @@
 import { Box, Button } from '@mui/material'
-import React from 'react'
-import style from './ActionButton.module.scss'
+import { FC } from 'react'
 
-const ActionButton: React.FC<{
+const ActionButton: FC<{
   children: React.ReactNode
   className?: string
   Icon: any
@@ -10,13 +9,13 @@ const ActionButton: React.FC<{
 }> = ({ children, className, Icon, onClick }) => (
   <Button
     variant="contained"
-    className={`${style['action-button']} ${className}`}
+    className={`action-button ${className}`}
     sx={{ p: `${Icon ? '6px 7.5px 6px 15px' : '6px 7.5px'}` }}
     onClick={onClick}
   >
     {children}
     {Icon && (
-      <Box className={style['icon-box']}>
+      <Box className="icon-box">
         <Icon />
       </Box>
     )}

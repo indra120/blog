@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import { FC, useContext, useState } from 'react'
 import Link from 'next/link'
 import {
   AppBar,
@@ -8,18 +8,17 @@ import {
   Toolbar,
   Typography,
 } from '@mui/material'
-import { Categories } from '../Layout'
-import style from './Header.module.scss'
+import { Categories } from './Layout'
 import { Menu } from '@mui/icons-material'
-import { MobileNavMenu } from '..'
+import { MobileNavMenu } from '.'
 
-const Header: React.FC = () => {
+const Header: FC = () => {
   const categories = useContext(Categories)
   const [drawer, setDrawer] = useState(false)
 
   return (
     <>
-      <AppBar className={style['app-bar']}>
+      <AppBar className="app-bar">
         <Container>
           <Toolbar sx={{ px: '0px !important', justifyContent: 'center' }}>
             <IconButton
@@ -30,13 +29,13 @@ const Header: React.FC = () => {
               <Menu sx={{ fontSize: '2rem' }} />
             </IconButton>
 
-            <Typography variant="h1" className={style['logo']}>
+            <Typography variant="h1" className="logo">
               <Link href="/">Ryzenix</Link>
             </Typography>
 
             <Box
               sx={{ display: { xs: 'none', md: 'flex' } }}
-              className={style['nav-menu']}
+              className="nav-menu"
             >
               {categories.map((category) => (
                 <Link key={category.slug} href={`/category/${category.slug}`}>
