@@ -18,7 +18,7 @@ const Header: FC = () => {
 
   return (
     <>
-      <AppBar className="app-bar">
+      <AppBar className="app-bar" sx={{ zIndex: 1400 }}>
         <Container>
           <Toolbar sx={{ px: '0px !important', justifyContent: 'center' }}>
             <IconButton
