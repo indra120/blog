@@ -1,15 +1,16 @@
 import { Box, Card, Typography } from '@mui/material'
 import { FC, useContext } from 'react'
-import type { postDetails } from '../interfaces'
-import { Post } from '../pages/post/[slug]'
-import { PostInfo } from '.'
-import getContentFragment from '../helpers/getContentFragment'
+import type { postDetails } from '../../interfaces'
+import { Post } from '../../pages/post/[slug]'
+import { PostInfo } from '..'
+import getContentFragment from '../../helpers/getContentFragment'
+import style from './style'
 
 const PostContent: FC = () => {
   const post = useContext<postDetails['post']>(Post)
 
   return (
-    <Card sx={{ p: { sm: '2rem' } }} className="post-content">
+    <Card sx={style.postContent}>
       <Box className="featured-image">
         <img src={post.featuredImage.url} alt={post.title} />
       </Box>

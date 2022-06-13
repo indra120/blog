@@ -2,12 +2,13 @@ import { ArrowForwardRounded } from '@mui/icons-material'
 import { Box, Card, Grid, Typography } from '@mui/material'
 import Link from 'next/link'
 import { FC } from 'react'
-import type { posts } from '../interfaces'
-import { ActionButton, PostInfo } from '.'
+import type { posts } from '../../interfaces'
+import { ActionButton, PostInfo } from '..'
+import style from './style'
 
 const PostCard: FC<{ post: posts[0]['node'] }> = ({ post }) => {
   return (
-    <Card sx={{ p: { sm: '2rem' } }} className="post-card">
+    <Card sx={style.postCard}>
       <Box className="featured-image">
         <Link href={`/post/${post.slug}`}>
           <img src={post.featuredImage.url} alt={post.title} />

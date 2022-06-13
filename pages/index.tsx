@@ -1,10 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import StickyBox from 'react-sticky-box'
 import { Container, Grid } from '@mui/material'
 import { getPosts } from '../services'
 import { posts } from '../interfaces'
-import { CategoriesWidget, PostCard, RecommendationWidget } from '../components'
+import { PostCard } from '../components'
 import { Sidebar } from '../sections'
 
 const Home: NextPage<{ posts: posts }> = ({ posts }) => {

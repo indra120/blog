@@ -1,6 +1,6 @@
-import '../styles/style.scss'
 import type { AppProps } from 'next/app'
 import { Layout } from '../components'
+import '../styles/style.scss'
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <Layout>

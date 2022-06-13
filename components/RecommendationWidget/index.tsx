@@ -1,9 +1,10 @@
-import { Card, Box, Grid, Typography } from '@mui/material'
+import { Card, Box, Typography } from '@mui/material'
 import moment from 'moment'
 import Link from 'next/link'
 import { FC, useState, useEffect } from 'react'
-import type { recommendationWidget, relatedPosts } from '../interfaces'
-import { getRecentPosts, getSimilarPosts } from '../services'
+import type { recommendationWidget, relatedPosts } from '../../interfaces'
+import { getRecentPosts, getSimilarPosts } from '../../services'
+import style from './style'
 
 const RecommendationWidget: FC<recommendationWidget> = ({
   categories,
@@ -21,7 +22,7 @@ const RecommendationWidget: FC<recommendationWidget> = ({
   }, [slug])
 
   return (
-    <Card className="recommendation-widget">
+    <Card sx={style.recommendationWidget}>
       <Typography variant="h3" className="widget-title">
         {slug ? 'Related Posts' : 'Recently Added'}
       </Typography>

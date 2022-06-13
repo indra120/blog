@@ -12,11 +12,12 @@ import {
   Typography,
 } from '@mui/material'
 import { FC, useContext, useEffect, useState } from 'react'
-import { submitComment } from '../services'
-import { ActionButton } from '.'
+import { submitComment } from '../../services'
+import { ActionButton } from '..'
 import { CheckCircleRounded, CloseRounded, Telegram } from '@mui/icons-material'
-import { Post } from '../pages/post/[slug]'
-import { postDetails } from '../interfaces'
+import { Post } from '../../pages/post/[slug]'
+import { postDetails } from '../../interfaces'
+import style from './style'
 
 const AddComments: FC = () => {
   const { slug } = useContext<postDetails['post']>(Post)
@@ -63,7 +64,7 @@ const AddComments: FC = () => {
   const closeDialog = () => setShowResponseMessage(false)
 
   return (
-    <Card className="add-comments">
+    <Card sx={style.addComments}>
       <Typography variant="h3" className="widget-title">
         Leave a Reply
       </Typography>

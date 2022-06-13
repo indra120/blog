@@ -2,9 +2,10 @@ import { Card, Typography } from '@mui/material'
 import { FC, useContext, useEffect, useState } from 'react'
 import moment from 'moment'
 import parse from 'html-react-parser'
-import { getComments } from '../services'
-import type { comments, postDetails } from '../interfaces'
-import { Post } from '../pages/post/[slug]'
+import { getComments } from '../../services'
+import type { comments, postDetails } from '../../interfaces'
+import { Post } from '../../pages/post/[slug]'
+import style from './style'
 
 const Comments: FC = () => {
   const { slug } = useContext<postDetails['post']>(Post)
@@ -17,7 +18,7 @@ const Comments: FC = () => {
   return (
     <>
       {comments.length > 0 && (
-        <Card className="comments">
+        <Card sx={style.comments}>
           <Typography className="widget-title">
             {comments.length} Comment{comments.length > 1 ? 's' : ''}
           </Typography>

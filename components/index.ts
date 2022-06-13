@@ -1,5 +1,5 @@
 export { default as ActionButton } from './ActionButton'
-export { default as AddComments } from './Addcomments'
+export { default as AddComments } from './AddComments'
 export { default as Author } from './Author'
 export { default as CategoriesWidget } from './CategoriesWidget'
 export { default as Comments } from './Comments'
